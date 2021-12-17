@@ -1,0 +1,28 @@
+{
+  "name": "redux-toolkit-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Backend/lib/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pouryaghazizadeh/redux-toolkit-react.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pouryaghazizadeh/redux-toolkit-react/issues"
+  },
+  "homepage": "https://github.com/pouryaghazizadeh/redux-toolkit-react#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "concurrently": "^6.5.0",
+    "nodemon": "^2.0.15"
+  }
+}
