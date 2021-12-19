@@ -1,10 +1,11 @@
 // tools
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-// fetch datahome 
+// fetch data home 
 export const getDataHome = createAsyncThunk("home/getDataHome", async () => {
   try {
     const { data } = await axios.get("http://localhost:6600/");
+    console.log(data);
     return data;
   } catch (err) {
     console.log(err);
@@ -30,5 +31,6 @@ const homeSlices = createSlice({
     },
   },
 });
+
 
 export default homeSlices.reducer;
