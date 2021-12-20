@@ -1,10 +1,12 @@
 // tools
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { add, selectTodo , del} from "../../redux/slice/todoSlice";
+import TodoCard from "../../components/TodoCard";
+import { add, selectTodo, delAll } from "../../redux/slice/todoSlice";
 
 const Todo = () => {
   const [todo, setTodo] = useState("");
+
   const dispatch = useDispatch();
   const todos = useSelector(selectTodo);
   return (
@@ -17,21 +19,16 @@ const Todo = () => {
       />
       <button
         onClick={() => {
-          dispatch(add({ text: todo, id: Date.now()}));
+          dispatch(add({ text: todo, id: Date.now().toString() }));
           setTodo("");
         }}
       >
         add
       </button>
-
+      <button onClick={() => dispatch(delAll())}>delete All</button>
       <div>
-        {todos.map((value)=>{
-            return (
-              <div key={value.id}>
-                <p id={value.id}>{value.text}</p>
-                <button onClick={(e) => dispatch(del(value.id))}>delete</button>
-              </div>
-            );
+        {todos.map(({ text, id }) => {
+          return <TodoCard key={id} text={text} id={id} setTodo={setTodo} />;
         })}
       </div>
     </div>

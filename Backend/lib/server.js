@@ -1,20 +1,17 @@
-const express = require('express')
-const core = require('cors')
+const express = require("express");
+const core = require("cors");
 
-// data 
-const homeData =require("../data/homeData")
-const app = express()
+// data
+const homeData = require("../data/homeData");
+const app = express();
 // for send data
 app.use(express.json());
-app.use(core())
+app.use(core());
 
-app.get("/",(req,res)=>{
+app.get("/", (req, res) => {
+  res.send(homeData);
+});
 
-    res.send(homeData);
-
-})
-
-
-app.listen("6600",()=>{
-    console.log("app run");
-})
+app.listen("6600", () => {
+  console.log("app run");
+});
