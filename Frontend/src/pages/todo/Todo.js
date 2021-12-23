@@ -17,6 +17,7 @@ const Todo = () => {
         value={todo}
         onChange={(e) => setTodo(e.target.value)}
       />
+      {/* button for add todo  */}
       <button
         onClick={() => {
           dispatch(add({ text: todo, id: Date.now().toString() }));
@@ -25,7 +26,9 @@ const Todo = () => {
       >
         add
       </button>
+      {/* button for delete a todo */}
       <button onClick={() => dispatch(delAll())}>delete All</button>
+      {/* map on array of todo for show them */}
       <div>
         {todos.map(({ text, id }) => {
           return <TodoCard key={id} text={text} id={id} setTodo={setTodo} />;

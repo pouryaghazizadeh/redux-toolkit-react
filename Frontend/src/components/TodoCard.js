@@ -3,7 +3,9 @@ import { useDispatch } from "react-redux";
 import { del, upd } from "../redux/slice/todoSlice";
 
 const TodoCard = ({ id, text, setTodo }) => {
+  // state for handel edit mood
   const [edit, setEdit] = useState(false);
+  // state for update edited card
   const [update, setUpdate] = useState(text);
   const dispatch = useDispatch();
   return (
@@ -24,6 +26,7 @@ const TodoCard = ({ id, text, setTodo }) => {
           >
             delete
           </button>
+
           <button
             onClick={(e) => {
               dispatch(upd({ id: id, text: update }));
@@ -33,7 +36,9 @@ const TodoCard = ({ id, text, setTodo }) => {
             edit
           </button>
         </>
-      ) : (
+      ) : 
+      // if we dont have edit this code will run
+      (
         <>
           <p id={id}>{text}</p>
 
@@ -47,6 +52,8 @@ const TodoCard = ({ id, text, setTodo }) => {
           <button
             onClick={() => {
                 setTodo(update);
+                // this is for when edit finished input be empty and dont have bug in original input
+                 setTodo("");
               setEdit(true);
             }}
           >
