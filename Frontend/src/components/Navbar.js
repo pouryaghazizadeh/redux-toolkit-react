@@ -14,7 +14,7 @@ function Navbar() {
         <Link to="/login" className={{}}>
           Login
         </Link>
-        <Link>Register</Link>
+        <Link to="/sign-in">Register</Link>
       </div>
     );
 }
