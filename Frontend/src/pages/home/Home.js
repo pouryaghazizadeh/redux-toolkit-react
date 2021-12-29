@@ -20,9 +20,9 @@ const Home = () => {
     <div>
       <h1>home..</h1>
       <Link to="/todo">todoooooo</Link>
-      {data.map((v) => {
+      {data.map((v,i) => {
         return (
-          <div className={{ width: "100%", height: "700px" }}>
+          <div key={i} className={{ width: "100%", height: "700px" }}>
             <h2>{v.title}</h2>
             <img
               alt={v.title}

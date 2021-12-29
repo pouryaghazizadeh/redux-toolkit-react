@@ -2,6 +2,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 // note
+
 // add reducer add a new task
 // del delete a task
 // upd  update a task
@@ -16,7 +17,7 @@ const todoSlice = createSlice({
       return (state = state.filter(({ id }) => id !== payload));
     },
     upd(state, { payload }) {
-      state = state.map((state) => {
+      state = state.map((state)=>{
         if (state.id === payload.id) {
           return {
             ...state,

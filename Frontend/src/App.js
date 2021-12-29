@@ -1,5 +1,5 @@
 // tools
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 // component
 import Home from "./pages/home/Home";
@@ -14,7 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/todo" element={<Todo />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/sign-in" element={<Register />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </div>
   );
