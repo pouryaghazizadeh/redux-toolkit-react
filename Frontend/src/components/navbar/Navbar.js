@@ -1,19 +1,26 @@
-// tools
-import MenuIcon from "@mui/icons-material/Menu";
-import { Container, Menu, MenuItem, Typography } from "@mui/material";
 // style
-import AppBar from "@mui/material/AppBar";
-import Avatar from "@mui/material/Avatar";
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
-import Toolbar from "@mui/material/Toolbar";
+import MenuIcon from "@mui/icons-material/Menu";
+import {
+  AppBar,
+  Avatar,
+  Box,
+  Container,
+  IconButton,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Typography,
+} from "@mui/material";
+// tools
+import { Link as RouterLink } from "react-router-dom";
 import { useState } from "react";
-// import IconButton from "@material-ui/core/IconButton";
-import ButtonRed from "./NavButton";
+// components
+import ButtonRed from "../NavButton";
+
+
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
-
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -23,12 +30,12 @@ function Navbar() {
 
   const links = [
     {
-      title: "Service",
-      to: "/service",
+      title: "Todo",
+      to: "/todo",
     },
     {
       title: "AboutUs",
-      to: "/AboutUs",
+      to: "/About",
     },
     {
       title: "login",
@@ -78,20 +85,25 @@ function Navbar() {
             </Menu>
           </Box>
           {/* title website */}
+
           <Typography
             variant="h1"
+            component={RouterLink}
+            to="/"
             noWrap
             sx={{
               mr: 2,
-
+              textDecoration:"none",
+              color:"black",
               fontSize: "2.2rem",
-              flexGrow: { xs: 1 ,md:0},
+              fontWeight: "large",
+              flexGrow: { xs: 1, md: 0 },
             }}
           >
             APSignals
           </Typography>
           {/* menu for desktop screen */}
-          <Box flexGrow={1} sx={{display:{xs:"none",md:"flex"}}}>
+          <Box flexGrow={1} sx={{ display: { xs: "none", md: "flex" } }}>
             {links.map((page, i) => (
               <ButtonRed key={i} to={page.to} value={page.title} />
             ))}
@@ -105,16 +117,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-// <div>
-//         <Link to="/" >
-//           Home
-//         </Link>
-//         <Link to="/todo" >
-//           Todo
-//         </Link>
-//         <Link to="/login">
-//           Login
-//         </Link>
-//         <Link to="/register">Register</Link>
-//       </div>

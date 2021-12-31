@@ -1,12 +1,12 @@
 // style
-import { Button} from "@mui/material"
+import { Button } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
-function NavButton({ to,value}) {
+function NavButton({ to, value }) {
   return (
     <>
       <Button
-       
-        sx={{ textDecoration: "none", margin: "10px", fontSize: "1.2rem", color:"#f44336" }}
+        color="error"
+        sx={{ textDecoration: "none", margin: "10px", fontSize: "1rem" }}
         component={RouterLink}
         to={to}
       >
