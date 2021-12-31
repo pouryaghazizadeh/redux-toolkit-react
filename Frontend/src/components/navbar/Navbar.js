@@ -15,19 +15,22 @@ import {
 import { Link as RouterLink } from "react-router-dom";
 import { useState } from "react";
 // components
-import ButtonRed from "../NavButton";
+import ButtonRed from "../Button/NavButton";
 
 
 
 function Navbar() {
+  // state for handel menu
   const [anchorElNav, setAnchorElNav] = useState(null);
+  // function for open menu in mobile screen
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
+  // function for close menu in mobile screen
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
+//define name and routes for item menu
   const links = [
     {
       title: "Todo",
@@ -93,8 +96,8 @@ function Navbar() {
             noWrap
             sx={{
               mr: 2,
-              textDecoration:"none",
-              color:"black",
+              textDecoration: "none",
+              color: "black",
               fontSize: "2.2rem",
               fontWeight: "large",
               flexGrow: { xs: 1, md: 0 },

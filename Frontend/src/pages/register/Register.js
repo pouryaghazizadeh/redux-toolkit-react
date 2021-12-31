@@ -5,12 +5,14 @@ function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [checkPassword, setCheckPassword] = useState("");
+    // new user
 const newUser = {
   userName,
   email,
   password,
   checkPassword,
 };
+
     return (
       <main>
         <form>
