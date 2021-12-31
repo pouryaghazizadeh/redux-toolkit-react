@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        {/* <Route path="/" element={<Home />} /> */}
         <Route path="/todo" element={<Todo />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
