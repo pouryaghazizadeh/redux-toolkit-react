@@ -15,7 +15,7 @@ import {
 import { Link as RouterLink } from "react-router-dom";
 import { useState } from "react";
 // components
-import ButtonRed from "../Button/NavButton";
+import ButtonRed from "../Button/NavBtn";
 
 
 
@@ -47,7 +47,7 @@ function Navbar() {
   ];
 
   return (
-    <AppBar color="default">
+    <AppBar color="default"  position="sticky">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* box menu  for screen mobile */}

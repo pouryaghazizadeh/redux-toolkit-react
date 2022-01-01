@@ -1,8 +1,6 @@
 // tools
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
-// component
-import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import Todo from "./pages/todo/Todo";
