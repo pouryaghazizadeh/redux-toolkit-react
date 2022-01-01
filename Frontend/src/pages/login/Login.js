@@ -21,6 +21,7 @@ function Login() {
       setEmail(e.target.value);
     },
   };
+  // info group password
   const InfoPassword = {
     type: "password",
     size: "small",
@@ -31,6 +32,13 @@ function Login() {
       setPassword(e.target.value);
     },
   };
+  // info button
+  const InfoBtn = {
+    to:"/",
+    name:"submit",
+    type:"submit"
+
+  }
   return (
     <Container
       component="main"
@@ -65,7 +73,7 @@ function Login() {
           fullWidth
           sx={{
             // background: "blue",
-            height: { xs: "55%", sm: "70%",md:"65%" },
+            height: { xs: "55%", sm: "70%", md: "65%" },
           }}
         >
           <Box
@@ -75,7 +83,7 @@ function Login() {
               padding: "0px 10px 0px 10px",
               height: {
                 xs: "80%",
-                sm:"40vh",
+                sm: "40vh",
               },
               // background: "green",
               justifyContent: "space-between",
@@ -83,7 +91,7 @@ function Login() {
           >
             <Input Info={InfoEmail} />
             <Input Info={InfoPassword} />
-            <PrimaryButton value="Submit" to="/" type="submit" />
+            <PrimaryButton Info={InfoBtn} />
           </Box>
         </FormControl>
         <Typography align="center" sx={{ marginTop: "10px" }}>

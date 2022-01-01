@@ -1,9 +1,16 @@
 import { Button } from "@mui/material"
 import { Link as RouterLink } from "react-router-dom";
-function PrimaryButton({value,to,type}) {
+function PrimaryButton({Info}) {
+  const { name, to, type, sx } = Info;
     return (
-      <Button component={RouterLink} variant="contained" type={type} to={to}>
-        {value}
+      <Button
+        sx={sx}
+        component={RouterLink}
+        variant="contained"
+        type={type}
+        to={to}
+      >
+        {name}
       </Button>
     );
 }

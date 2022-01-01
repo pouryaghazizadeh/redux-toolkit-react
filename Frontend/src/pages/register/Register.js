@@ -18,26 +18,29 @@ function Register() {
     password,
     checkPassword,
   };
-
+      
   // style and info for props to components
   // user info
-  const InfoUser = {
+  const InfoUser ={
     type: "text",
     size: "small",
     label: "userName",
     sx: { margin: "15px 0px 0px 0px" },
-    event:(e) => {setUserName(e.target.value)}
+    event: (e) => {
+      setUserName(e.target.value);
+    },
   };
 
   const InfoEmail = {
-    type: "email",
-    size: "small",
+    type: "email" ,
+    size: "small" ,
     label: "email",
-    sx: { margin: "15px 0px 0px 0px" },
+    sx: { margin:"15px 0px 0px 0px"},
     event: (e) => {
-     setEmail(e.target.value);
+      setEmail(e.target.value);
     },
   };
+
   const InfoPassword = {
     type: "password",
     size: "small",
@@ -53,8 +56,15 @@ function Register() {
     label: "passwordCheck",
     sx: { margin: "15px 0px 0px 0px" },
     event: (e) => {
-     setCheckPassword(e.target.value);
+      setCheckPassword(e.target.value);
     },
+  };
+  // info button
+  const InfoBtn = {
+    to: "/",
+    name: "register",
+    type: "submit",
+    sx:{margin:"25px 0px 0px 0px"}
   };
 
   return (
@@ -72,7 +82,7 @@ function Register() {
         component="section"
         sx={{
           width: { xs: "100vw", sm: "80vw", md: "50vw" },
-          height: { xs: "95vh", sm: "80vh", md: "75vh" },
+          height: { xs: "95vh", sm: "85vh", md: "80vh" },
           boxShadow: " 2px 2px 9px rgba(0, 0, 0, 0.3)",
           display: "flex",
           flexDirection: "column",
@@ -83,20 +93,26 @@ function Register() {
         <Typography
           variant="h5"
           align="center"
-          sx={{ fontSize: { xs: "1rem", sm: "1.7rem", md: "2rem" } }}
+          sx={{ fontSize: { xs: "1.3rem", sm: "1.7rem", md: "2rem" },
+        margin:"10px 0px 0px 0px"
+        }}
         >
-          Welcome back!
+          register form
         </Typography>
-        <FormControl>
+        <FormControl fullWidth sx={{ padding: "0px 10px 0px 10px" ,
+        height: "60vh",
+      
+      }}>
           <Box
             sx={{
               display: "flex",
               flexDirection: "column",
-              padding: "0px 10px 0px 10px",
               height: {
                 xs: "80%",
-                sm: "40vh",
+                sm: "50vh",
+                md:"40vh"
               },
+              width: "100%",
               // background: "green",
               justifyContent: "space-between",
             }}
@@ -106,8 +122,12 @@ function Register() {
             <Input Info={InfoPassword} />
             <Input Info={InfoPasswordCheck} />
           </Box>
-          {/* <PrimaryButton /> */}
+          <PrimaryButton Info={InfoBtn} />
         </FormControl>
+        <Typography align="center" sx={{ marginTop: "10px" }}>
+          have you an account?
+          <Link href="#">  log in</Link>
+        </Typography>
       </Box>
     </Container>
   );
@@ -115,38 +135,3 @@ function Register() {
 
 export default Register;
 
-
-
-//  <main>
-//       <form>
-//         <input
-//           type="text"
-//           placeholder="userName"
-//           onChange={(e) => {
-//             setUserName(e.target.value);
-//           }}
-//         />
-//         <input
-//           type="text"
-//           placeholder="email"
-//           onChange={(e) => {
-//             setEmail(e.target.value);
-//           }}
-//         />
-//         <input
-//           type="password"
-//           placeholder="password"
-//           onChange={(e) => {
-//             setPassword(e.target.value);
-//           }}
-//         />
-//         <input
-//           type="password"
-//           placeholder="passwordCheck"
-//           onChange={(e) => {
-//             setCheckPassword(e.target.value);
-//           }}
-//         />
-//         <button>register</button>
-//       </form>
-//     </main>
