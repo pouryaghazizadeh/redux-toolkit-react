@@ -22,15 +22,19 @@ const Todo = () => {
   // info add btn
   const InfoAddBtn = {
     name: "add",
-    event: () => {
+    value: todo,
+    event: (e) => {
       dispatch(add({ text: todo, id: Date.now().toString() }));
-      setTodo("");
-      console.log("hkj");
+      setTodo(" ");
     },
     size: "large",
-    sx: {
-      height: "55px",
-    },
+    sx: { height: "55px" },
+  };
+
+  // delete btn
+  const InfoDeleteBtn = {
+    name: "Delete All",
+    sx: { width: "95%", margin: "15px 4px 0px 4px", height: "45px" },
   };
 
   return (
@@ -49,16 +53,17 @@ const Todo = () => {
           height: "150px",
           marginTop: "10px",
           // display: "flex",
-          background: "blue",
+          // background: "blue",
         }}
       >
         <Input Info={todoInput} />
         <Button Info={InfoAddBtn} />
+        <Button Info={InfoDeleteBtn} />
       </Box>
       <Box
         component="section"
         sx={{
-          width: "100%",
+          width: "80%",
           height: "auto",
           background: "khaki",
         }}
