@@ -1,11 +1,11 @@
 // style
-import { Box, Container, FormControl, Link, Typography } from "@mui/material";
+import { Box, Container, FormControl, Typography } from "@mui/material";
 // tools
 import { useState } from "react";
+import LinkBtn from "../../components/Button/LinkBtn";
 // component
 import PrimaryButton from "../../components/Button/PrimaryBtn";
 import Input from "../../components/input/Input";
-
 function Register() {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
@@ -18,30 +18,30 @@ function Register() {
     password,
     checkPassword,
   };
-      
+
   // style and info for props to components
   // user info
-  const InfoUser ={
+  const infoUser = {
     type: "text",
     size: "small",
-    label: "userName",
-    sx: { margin: "15px 0px 0px 0px" },
+    label: "User name",
+    sx: { margin: "10px 0px 0px 0px" },
     event: (e) => {
       setUserName(e.target.value);
     },
   };
-
-  const InfoEmail = {
-    type: "email" ,
-    size: "small" ,
-    label: "email",
-    sx: { margin:"15px 0px 0px 0px"},
+// email info
+  const infoEmail = {
+    type: "email",
+    size: "small",
+    label: "Email",
+    sx: { margin: "15px 0px 0px 0px" },
     event: (e) => {
       setEmail(e.target.value);
     },
   };
-
-  const InfoPassword = {
+// password info
+  const infoPassword = {
     type: "password",
     size: "small",
     label: "Password",
@@ -50,22 +50,27 @@ function Register() {
       setPassword(e.target.value);
     },
   };
-  const InfoPasswordCheck = {
+  // check password info
+  const infoPasswordCheck = {
     type: "password",
     size: "small",
-    label: "passwordCheck",
+    label: "Password check",
     sx: { margin: "15px 0px 0px 0px" },
     event: (e) => {
       setCheckPassword(e.target.value);
     },
   };
   // info button
-  const InfoBtn = {
+  const infoBtn = {
     to: "/",
     name: "register",
     type: "submit",
-    sx:{margin:"25px 0px 0px 0px"}
+    sx: { margin: "20px 0px 0px 0px" },
   };
+  // info link
+  const infoLink={
+    name:" login", to:"/login"
+  }
 
   return (
     <Container
@@ -75,34 +80,40 @@ function Register() {
         justifyContent: "center",
         alignItems: { md: "center" },
         height: "100vh",
-        // marginTop: "80px ",
       }}
     >
       <Box
         component="section"
         sx={{
           width: { xs: "100vw", sm: "80vw", md: "50vw" },
-          height: { xs: "95vh", sm: "85vh", md: "80vh" },
+          height: { xs: "95vh", sm: "95vh", md: "80vh" },
           boxShadow: " 2px 2px 9px rgba(0, 0, 0, 0.3)",
           display: "flex",
           flexDirection: "column",
           margin: "10px",
-          // background: "green",
         }}
       >
         <Typography
           variant="h5"
           align="center"
-          sx={{ fontSize: { xs: "1.3rem", sm: "1.7rem", md: "2rem" },
-        margin:"10px 0px 0px 0px"
-        }}
+          sx={{
+            fontSize: { xs: "1.3rem", sm: "1.7rem", md: "2rem" },
+            margin: "5px 0px 0px 0px",
+          }}
         >
           register form
         </Typography>
-        <FormControl fullWidth sx={{ padding: "0px 10px 0px 10px" ,
-        height: "60vh",
-      
-      }}>
+        {/* form container */}
+        <FormControl
+          fullWidth
+          sx={{
+            padding: "0px 10px 0px 10px",
+            height: { xs: "60vh", sm: "75vh", md: "60vh" },
+            display: "flex",
+            justifyContent: "space-evenly",
+          }}
+        >
+          {/* inputs container  */}
           <Box
             sx={{
               display: "flex",
@@ -110,23 +121,23 @@ function Register() {
               height: {
                 xs: "80%",
                 sm: "50vh",
-                md:"40vh"
+                md: "40vh",
               },
               width: "100%",
-              // background: "green",
               justifyContent: "space-between",
             }}
           >
-            <Input Info={InfoUser} />
-            <Input Info={InfoEmail} />
-            <Input Info={InfoPassword} />
-            <Input Info={InfoPasswordCheck} />
+
+            <Input Info={infoUser} />
+            <Input Info={infoEmail} />
+            <Input Info={infoPassword} />
+            <Input Info={infoPasswordCheck} />
           </Box>
-          <PrimaryButton Info={InfoBtn} />
+          <PrimaryButton Info={infoBtn} />
         </FormControl>
         <Typography align="center" sx={{ marginTop: "10px" }}>
           have you an account?
-          <Link href="#">  log in</Link>
+          <LinkBtn Info={infoLink} />
         </Typography>
       </Box>
     </Container>
@@ -134,4 +145,3 @@ function Register() {
 }
 
 export default Register;
-

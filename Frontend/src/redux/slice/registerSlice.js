@@ -13,7 +13,7 @@ const registerSlice = createSlice({
   },
 });
 
-// export const {  } = registerSlice.actions;
+// export const { } = registerSlice.actions;
 
 export const selectTodo = (state) => state.todo;
 
