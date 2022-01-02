@@ -9,6 +9,7 @@ function PrimaryButton({Info}) {
         variant="contained"
         type={type}
         to={to}
+     
       >
         {name}
       </Button>

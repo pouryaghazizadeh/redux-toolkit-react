@@ -1,7 +1,7 @@
 import { TextField } from "@mui/material";
 
 function Input({ Info }) {
-  const { type, size, label, value, sx, event } = Info;
+  const { type, size, label, value, sx, event, placeholder } = Info;
 
   return (
     <TextField
@@ -11,6 +11,7 @@ function Input({ Info }) {
       value={value}
       sx={sx}
       onChange={event}
+      placeholder={placeholder}
     />
   );
 }
