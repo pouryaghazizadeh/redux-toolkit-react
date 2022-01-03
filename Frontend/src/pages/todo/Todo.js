@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "../../components/Button/Button";
 import Input from "../../components/input/Input";
-import TodoCard from "../../components/TodoCard";
+import TodoCard from "../../components/todoCard/TodoCard";
 import { add, selectTodo } from "../../redux/slice/todoSlice";
 // style
 import {todoStyles} from "./todo.style"
@@ -14,6 +14,7 @@ const Todo = () => {
 
   const dispatch = useDispatch();
   const todos = useSelector(selectTodo);
+
 // style
 const classes = todoStyles()
   // info for todo input
@@ -22,14 +23,19 @@ const classes = todoStyles()
     variant: "outlined",
     placeholder: "write your text",
     sx: { width: { xs: "78%",sm:"68%"}, marginRight: "3px" },
+    event:(e)=>{
+      setTodo(e.target.value)
+    
+    }
   };
   // info add btn
   const InfoAddBtn = {
-    name: "add",
+    name:"add",
     value: todo,
     event: (e) => {
       dispatch(add({ text: todo, id: Date.now().toString() }));
-      setTodo(" ");
+      setTodo("");
+     
     },
     size: "large",
     sx: { height: "55px" },

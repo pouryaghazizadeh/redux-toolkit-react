@@ -5,10 +5,10 @@ const Input = ({ Info }) => {
 
   return (
     <TextField
+      defaultValue={value ? value : ""}
       type={type}
       size={size}
       label={label}
-      value={value}
       sx={sx}
       onChange={event}
       placeholder={placeholder}
