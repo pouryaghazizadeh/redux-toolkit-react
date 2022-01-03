@@ -1,6 +1,6 @@
 import { TextField } from "@mui/material";
 
-function Input({ Info }) {
+const Input = ({ Info }) => {
   const { type, size, label, value, sx, event, placeholder } = Info;
 
   return (
@@ -14,6 +14,6 @@ function Input({ Info }) {
       placeholder={placeholder}
     />
   );
-}
+};
 
 export default Input;

@@ -11,13 +11,11 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
+import { useState } from "react";
 // tools
 import { Link as RouterLink } from "react-router-dom";
-import { useState } from "react";
 // components
 import ButtonRed from "../Button/NavBtn";
-
-
 
 function Navbar() {
   // state for handel menu
@@ -30,7 +28,7 @@ function Navbar() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-//define name and routes for item menu
+  //define name and routes for item menu
   const links = [
     {
       title: "Todo",
@@ -47,7 +45,7 @@ function Navbar() {
   ];
 
   return (
-    <AppBar color="default"  position="sticky">
+    <AppBar color="default" position="sticky">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* box menu  for screen mobile */}
@@ -87,8 +85,9 @@ function Navbar() {
               ))}
             </Menu>
           </Box>
-          {/* title website */}
 
+          {/* title website */}
+          
           <Typography
             variant="h1"
             component={RouterLink}
