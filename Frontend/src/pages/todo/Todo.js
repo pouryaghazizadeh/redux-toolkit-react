@@ -6,18 +6,22 @@ import Button from "../../components/Button/Button";
 import Input from "../../components/input/Input";
 import TodoCard from "../../components/TodoCard";
 import { add, selectTodo } from "../../redux/slice/todoSlice";
+// style
+import {todoStyles} from "./todo.style"
+
 const Todo = () => {
   const [todo, setTodo] = useState("");
 
   const dispatch = useDispatch();
   const todos = useSelector(selectTodo);
-
+// style
+const classes = todoStyles()
   // info for todo input
   const todoInput = {
     type: "text",
     variant: "outlined",
     placeholder: "write your text",
-    sx: { width: "80%", marginRight: "3px" },
+    sx: { width: { xs: "78%",sm:"68%"}, marginRight: "3px" },
   };
   // info add btn
   const InfoAddBtn = {
@@ -34,40 +38,21 @@ const Todo = () => {
   // delete btn
   const InfoDeleteBtn = {
     name: "Delete All",
-    sx: { width: "95%", margin: "15px 4px 0px 4px", height: "45px" },
+    sx: {
+      width: { xs: "100%", sm: "83%" },
+      margin: { xs: "15px 0px 0px 0px", sm: "15px 4px 0px 4px", md:"15px 0px 0px 0px" },
+      height: "45px",
+    },
   };
 
   return (
-    <Box
-      component="main"
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
-      <Box
-        component="section"
-        sx={{
-          width: "500px",
-          height: "150px",
-          marginTop: "10px",
-          // display: "flex",
-          // background: "blue",
-        }}
-      >
+    <Box component="main" className={classes.containerPage}>
+      <Box component="section" className={classes.containerInput}>
         <Input Info={todoInput} />
         <Button Info={InfoAddBtn} />
         <Button Info={InfoDeleteBtn} />
       </Box>
-      <Box
-        component="section"
-        sx={{
-          width: "80%",
-          height: "auto",
-          background: "khaki",
-        }}
-      >
+      <Box component="section" className={classes.containerCard}>
         {todos.map(({ text, id }) => {
           return <TodoCard key={id} text={text} id={id} setTodo={setTodo} />;
         })}
@@ -77,32 +62,3 @@ const Todo = () => {
 };
 
 export default Todo;
-
-// <div>
-//       <input
-//         type="text"
-//         placeholder="todo"
-//         value={todo}
-//         onChange={(e) => setTodo(e.target.value)}
-//       />
-//       {/* button for add todo  */}
-//       <button
-//         onClick={() => {
-//           dispatch(add({ text: todo, id: Date.now().toString() }));
-//           setTodo("");
-//         }}
-//       >
-//         add
-//       </button>
-//       {/* button for delete a todo */}
-//       <button onClick={() => dispatch(delAll())}>delete All</button>
-//       {/* map on array of todo for show them */}
-//       <div>
-
-//       </div>
-//     </div>
-// <div>
-//   {todos.map(({ text, id }) => {
-//     return <TodoCard key={id} text={text} id={id} setTodo={setTodo} />;
-//   })}
-// </div>;
